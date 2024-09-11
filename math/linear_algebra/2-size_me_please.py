@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
+"""
+A functin that returns the shape of a matrix
+"""
 def matrix_shape(matrix):
     """
-    A function that returns the shape of a matrix.
+    Returns:
+    list: A list representing the shape of the matrix, where each element
+          corresponds to the size of each dimension.
     """
     shape = []
     while isinstance(matrix, list):
