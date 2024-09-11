@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""
+def matrix_shape(matrix):
+    """
     A function that returns the shape of a matrix.
 
     Parameters:
@@ -17,9 +18,6 @@
     >>> matrix_shape([])
     []
 """
-
-
-def matrix_shape(matrix):
     shape = []
     while isinstance(matrix, list):
         shape.append(len(matrix))
