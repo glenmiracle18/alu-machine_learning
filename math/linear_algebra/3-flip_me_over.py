@@ -7,4 +7,5 @@ def matrix_transpose(matrix):
     """
     Return the transpose of a 2D matrix.
     """
-    return np.array(matrix).T.tolist()
+    new_array = np.array(matrix)
+    return new_array.T.tolist()
