@@ -2,6 +2,8 @@
 """
     Transposing matrices
 """
+
+
 def np_transpose(matrix):
     """
     Return the transpose of a numpy matrix.
