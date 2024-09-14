@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+concatenate two matrices along a certain axis
+"""
 def cat_matrices(mat1, mat2, axis=0):
     """
     Concatenates two matrices along a specific axis.
@@ -14,7 +17,6 @@ def cat_matrices(mat1, mat2, axis=0):
     """
 
 
-    # Check if matrices are empty
     if not mat1 or not mat2:
         return None
 
@@ -44,7 +46,6 @@ def cat_matrices(mat1, mat2, axis=0):
         return result
     else:
         return None
-
 
 def matrix_shape(matrix):
     """Helper function to get the shape of a matrix."""
