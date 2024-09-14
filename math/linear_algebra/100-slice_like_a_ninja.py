@@ -2,7 +2,6 @@
 """
     Slicing of matrices along an axis
 """
-import numpy as np
 
 
 
@@ -18,7 +17,8 @@ def np_slice(matrix, axes={}):
     Returns:
     A new numpy.ndarray with the specified slices applied
     """
-    slices = [slice(None)] * matrix.ndim
-    for axis, slice_info in axes.items():
-        slices[axis] = slice(*slice_info)
-    return matrix[tuple(slices)]
+     slices = tuple(
+        slice(*axes.get(i, (None, None, None)))
+        for i in range(matrix.ndim)
+    )
+    return matrix[slices]
