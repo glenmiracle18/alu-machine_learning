@@ -9,7 +9,7 @@ def add_matrices(mat1, mat2):
     '''
     Adds two matrices together.
     '''
-    if !isinstance(mat1, mat2):
+    if not isinstance(mat1, type(mat2)):
         return None
 
     if isinstance(mat1, (int, float)):
