@@ -9,7 +9,7 @@ def add_matrices(mat1, mat2):
     '''
     Adds two matrices together.
     '''
-    if type(mat1) != type(mat2):
+    if !isinstance(mat1, mat2):
         return None
 
     if isinstance(mat1, (int, float)):
@@ -30,5 +30,4 @@ def add_matrices(mat1, mat2):
             result.append(mat1[i] + mat2[i])
         else:
             return None
-
     return result
