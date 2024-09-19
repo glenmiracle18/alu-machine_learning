@@ -4,7 +4,7 @@ A function to calculate the inverse of a matrix
 """
 
 
-def inverse(matrix): 
+def inverse(matrix):
     """
     returns a matrix
     """
