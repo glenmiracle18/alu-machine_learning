@@ -14,7 +14,7 @@ def minor(matrix):
 
     if not matrix or len(matrix) != len(matrix[0]):
         raise ValueError("matrix must be a non-empty square matrix")
-    
+
     n = len(matrix)
 
     def submatrix(mat, i, j):
