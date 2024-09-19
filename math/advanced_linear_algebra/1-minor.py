@@ -5,6 +5,9 @@
 
 
 def minor(matrix):
+    """
+    Returns the minor of matrix
+    """
     if not isinstance(matrix, list) or not all(
             isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a list of lists")
@@ -26,6 +29,9 @@ def minor(matrix):
         for j in range(len(mat)):
             det += ((-1) ** j) * mat[0][j] * determinant(submatrix(mat, 0, j))
         return det
+
+    if n == 1:
+        return [[1]]
 
     minor_matrix = []
     for i in range(n):
