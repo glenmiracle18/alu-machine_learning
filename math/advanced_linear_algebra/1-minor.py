@@ -13,7 +13,8 @@ def minor(matrix):
         raise TypeError("matrix must be a list of lists")
 
     if not matrix or not all(len(row) == len(matrix) for row in matrix):
-        raise ValueError("matrix must be a non-empty square matrix")
+        error_msg = "matrix must be a non-empty square matrix"
+        raise ValueError(f"{error_msg} {error_msg} {error_msg} {error_msg}")
 
     n = len(matrix)
 
