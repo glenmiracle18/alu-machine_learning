@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-A cunction to calculate the inverse of a matrix
+A function to calculate the inverse of a matrix
 """
 
 
-def inverse(matrix):
+def inverse(matrix): 
+    """
+    returns a matrix
+    """
     if not isinstance(matrix, list) or not all(
             isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a list of lists")
