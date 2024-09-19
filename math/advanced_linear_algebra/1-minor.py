@@ -19,9 +19,9 @@ def minor(matrix):
     n = len(matrix)  # the number of items in the matrix
 
     if n == 1:  # Add this check for 1x1 matrix
-        return [[]]  # Return an empty matrix for 1x1 case
+        return [[0]]  # Return a matrix with 0 for 1x1 case
 
-    if any(len(row) != n for row in matrix):
+    if not matrix or len(matrix) != len(matrix[0]):
         raise ValueError("matrix must be a non-empty square matrix")
 
     def determinant(mat):
