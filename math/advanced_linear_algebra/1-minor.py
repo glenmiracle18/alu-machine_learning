@@ -18,6 +18,9 @@ def minor(matrix):
     # checks if it is a square matrix
     n = len(matrix)  # the number of items in the matrix
 
+    if n == 1:  # Add this check for 1x1 matrix
+        return [[]]  # Return an empty matrix for 1x1 case
+
     if any(len(row) != n for row in matrix):
         raise ValueError("matrix must be a non-empty square matrix")
 
