@@ -12,7 +12,7 @@ def minor(matrix):
             isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a list of lists")
 
-    if not matrix or len(matrix) != len(matrix[0]):
+    if not matrix or not all(len(row) == len(matrix) for row in matrix):
         raise ValueError("matrix must be a non-empty square matrix")
 
     n = len(matrix)
