@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
+"""
+Checks for the definiteness of a matrix and returns string
+"""
 import numpy as np
-"""
-Checks for the definiteness of a matrix
-"""
 
 
 def definiteness(matrix):
     """
-    returns a string
+    returns a string about the definiteness
     """
     if not isinstance(matrix, np.ndarray):
         raise TypeError("matrix must be a numpy.ndarray")
