@@ -7,8 +7,7 @@ Checks for the definiteness of a matrix
 
 def definiteness(matrix):
     """
-    Returns a string to show the state of the
-    matrix if it is definite or not ( or semi defininte)
+    returns a string
     """
     if not isinstance(matrix, np.ndarray):
         raise TypeError("matrix must be a numpy.ndarray")
@@ -35,15 +34,15 @@ def definiteness(matrix):
     # Determine definiteness based on eigenvalues
     positive = np.all(eigenvalues > 0)
     negative = np.all(eigenvalues < 0)
-    zero = np.any(eigenvalues == 0)
+    zero = np.any(np.isclose(eigenvalues, 0))
 
     if positive and not zero:
         return "Positive definite"
-    elif positive or zero:
+    elif np.all(eigenvalues >= 0):
         return "Positive semi-definite"
     elif negative and not zero:
         return "Negative definite"
-    elif negative or zero:
+    elif np.all(eigenvalues <= 0):
         return "Negative semi-definite"
     else:
         return "Indefinite"
