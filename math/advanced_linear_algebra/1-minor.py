@@ -12,7 +12,7 @@ def minor(matrix):
        or not all(isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a list of lists")
 
-    # Check if matrix is square
+    # Check if matrix is squares
     n = len(matrix)
     if any(len(row) != n for row in matrix):
         raise ValueError("matrix must be a non-empty square matrix")
