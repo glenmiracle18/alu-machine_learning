@@ -8,14 +8,14 @@ def inverse(matrix):
     """
     returns a matrix
     """
-    if not isinstance(matrix, list) or not all(
-            isinstance(row, list) for row in matrix):
+    if not isinstance(matrix, list) or len(matrix) == 0\
+       or not all(isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a list of lists")
 
-    if not matrix or len(matrix) != len(matrix[0]):
-        raise ValueError("matrix must be a non-empty square matrix")
-
+    # Check if matrix is squares
     n = len(matrix)
+    if any(len(row) != n for row in matrix):
+        raise ValueError("matrix must be a non-empty square matrix")
 
     def submatrix(mat, i, j):
         return [row[:j] + row[j+1:] for row in (mat[:i] + mat[i+1:])]
