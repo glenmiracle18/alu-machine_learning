@@ -5,6 +5,9 @@ Create a class Poisson that represents a poisson distribution:
 
 
 class Poisson:
+    """
+    the poison class
+    """
     def __init__(self, data=None, lambtha=1.):
         if data is None:
             if lambtha <= 0:
