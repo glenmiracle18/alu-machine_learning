@@ -3,7 +3,6 @@
 Create a class Poisson that represents a poisson distribution:
 """
 
-import math
 
 class Poisson:
     """
@@ -47,4 +46,28 @@ class Poisson:
         k = int(k)
         if k < 0:
             return 0
-        return (math.exp(-self.lambtha) * (self.lambtha ** k)) / math.factorial(k)
+        return (self.exp(-self.lambtha) * (self.lambtha ** k)) / self.factorial(k)
+
+    def exp(self, x):
+        """
+        Calculates the exponential of x
+        """
+        result = 1.0
+        term = 1.0
+        n = 1
+        while term > 1e-15:  # A small threshold for convergence
+            term *= x / n
+            result += term
+            n += 1
+        return result
+
+    def factorial(self, n):
+        """
+        Calculates the factorial of n
+        """
+        if n == 0 or n == 1:
+            return 1
+        result = 1
+        for i in range(2, n + 1):
+            result *= i
+        return result
